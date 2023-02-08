@@ -22,12 +22,12 @@ CENTER_LAT, CENTER_LON = -14.272572694355336, -51.25567404158474
 
 # =====================================================================
 # Data Load
-df_states = pd.read_csv("C:/Users/felip/OneDrive/Área de Trabalho/GIT/dashboard/Python/df_states.csv")
+df_states = pd.read_csv("df_states.csv")
 
-df_brasil = pd.read_csv("C:/Users/felip/OneDrive/Área de Trabalho/GIT/dashboard/Python/df_brasil.csv")
+df_brasil = pd.read_csv("df_brasil.csv")
 
-token = open("D:/Área de Trabalho/Dashboard COVID-19/.mapbox_token").read()
-brazil_states = json.load(open("C:/Users/felip/OneDrive/Área de Trabalho/GIT/dashboard/Python/geojson/brazil_geo.json", "r"))
+token = open(".mapbox_token").read()
+brazil_states = json.load(open("geojson/brazil_geo.json", "r"))
 
 df_states_ = df_states[df_states["data"] == "2020-05-13"]
 
@@ -278,4 +278,4 @@ def update_location(click_data,n_clicks_location,n_clicks_Geral):
 # Inicializando serve
 
 if __name__ == "__main__":
-    app.run_server(debug=True, port=8051)
+    app.run_server(debug=False, port=8051)
